@@ -60,7 +60,7 @@ Every row points at a public repo. Feel free to go read the actual manifests ins
 | Bare-metal provisioning | [arch-bootstrap](https://github.com/MechHead777/arch-bootstrap) | Two-stage Arch installer: LUKS2, btrfs, systemd-boot, then a chezmoi layer covering shell, Neovim, and mise-pinned runtimes on bare metal and WSL alike |
 | Declarative systems | [nixos-backup](https://github.com/MechHead777/nixos-backup) | Whole desktop reproducible from a flake with one command |
 | Kubernetes fundamentals | [k8s-for-dummy](https://github.com/MechHead777/k8s-for-dummy) | Rolling vs. recreate strategies compared side by side, namespaces, a real self-hosted app |
-| CI for embedded builds | [zmk-config](https://github.com/MechHead777/zmk-config) | GitHub Actions matrix building ZMK firmware for three keyboards on every push |
+| Embedded config from scratch | [zmk-config](https://github.com/MechHead777/zmk-config) | Hand-written ZMK shield definitions for three boards: Kconfig, devicetree overlays, and split/dongle variants |
 | Firmware debugging | [my-vial-keyboards](https://github.com/MechHead777/my-vial-keyboards) | QMK/Vial keymaps, plus porting boards off memory-starved AVR chips to RP2040 |
 
 ## Certifications
