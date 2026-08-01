@@ -1,0 +1,45 @@
+name: Update live cluster state
+
+on:
+  schedule:
+    # Daily at 06:14 UTC. Off the hour on purpose: GitHub queues a lot of
+    # cron jobs at :00 and delays them under load.
+    - cron: "14 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-live
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rebuild the LIVE block
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          chmod +x scripts/update-live.sh
+          ./scripts/update-live.sh README.md
+
+      - name: Commit if anything changed
+        run: |
+          # Bot identity, deliberately. Committing as the account owner would
+          # paint a contribution square every single day, and a perfectly
+          # uniform bot-driven streak looks worse than no live block at all.
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet -- README.md; then
+            echo "No change."
+            exit 0
+          fi
+
+          git add README.md
+          git commit -m "chore: refresh live cluster state"
+          git push
