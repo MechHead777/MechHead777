@@ -23,8 +23,8 @@ flowchart LR
   M --> P["Prometheus<br/>+ Grafana"]
   A --> L[Linkding]
   A --> AB[Audiobookshelf]
-  CF["Cloudflare Tunnel"] --> L
-  CF --> AB
+  L --> CF["Cloudflare Tunnel<br/>(outbound, no open ports)"]
+  AB --> CF
 ```
 
 No `kubectl apply` by hand. If it isn't committed, it isn't running. Renovate opens its own PRs when a base image or a Flux controller falls behind, so dependency drift shows up as a pull request instead of a surprise.
