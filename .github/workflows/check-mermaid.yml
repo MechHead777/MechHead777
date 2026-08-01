@@ -1,8 +1,7 @@
 name: Check mermaid diagram
 
-# GitHub renders mermaid client-side, so a syntax error does not fail any
-# build. It just shows a red error box on the profile that only a human
-# looking at the page would notice. This turns that into a CI failure.
+# GitHub renders mermaid client-side, so bad syntax shows a red error box on
+# the profile instead of failing anything. This catches it in CI instead.
 
 on:
   push:
@@ -38,8 +37,6 @@ jobs:
           echo "count=$count" >> "$GITHUB_OUTPUT"
           echo "Found $count mermaid block(s)."
 
-          # A README that silently loses its diagram is also a failure worth
-          # catching, since the surrounding prose still refers to it.
           if [[ "$count" -eq 0 ]]; then
             echo "::error::No mermaid block found in README.md"
             exit 1
@@ -47,13 +44,10 @@ jobs:
 
       - name: Validate each block
         run: |
-          # mermaid-cli drives headless Chromium, which cannot use its own
-          # sandbox on the runner. Safe here: the only input is this repo's
-          # own README, rendered in a throwaway container.
+          # Chromium can't sandbox itself on the runner.
           echo '{"args":["--no-sandbox","--disable-setuid-sandbox"]}' > .mermaid-check/puppeteer.json
 
-          # A parse error makes mermaid-cli exit non-zero, so rendering is
-          # the validation. The SVG output itself is discarded.
+          # Rendering is the check: mermaid-cli exits non-zero on a parse error.
           for f in .mermaid-check/*.mmd; do
             echo "Checking $f"
             npx -y @mermaid-js/mermaid-cli@11 \

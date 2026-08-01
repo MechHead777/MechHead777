@@ -32,9 +32,7 @@ No `kubectl apply` by hand. If it isn't committed, it isn't running. Renovate op
 <!-- LIVE:START -->
 ### Live cluster state
 
-This table rebuilds itself daily from a GitHub Action. It reads the public
-cluster repo, never the cluster, so there is nothing exposed to the internet
-to make it work. The automation is the point.
+Rebuilt daily by a GitHub Action that reads the cluster repo, not the cluster.
 
 | | |
 |---|---|
@@ -43,7 +41,7 @@ to make it work. The automation is the point.
 | Renovate dependency PRs | none open, 6 merged in the last 30 days |
 | Apps under GitOps | 2 |
 
-<sub>Updated 2026-08-01 16:49 UTC</sub>
+<sub>Updated 2026-08-01 17:47 UTC</sub>
 <!-- LIVE:END -->
 
 ## Claims, and where to check them
