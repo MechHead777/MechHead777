@@ -1,0 +1,56 @@
+name: Check mermaid diagram
+
+# GitHub renders mermaid client-side, so a syntax error does not fail any
+# build. It just shows a red error box on the profile that only a human
+# looking at the page would notice. This turns that into a CI failure.
+
+on:
+  push:
+    paths:
+      - "README.md"
+      - ".github/workflows/check-mermaid.yml"
+  pull_request:
+    paths:
+      - "README.md"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Extract mermaid blocks
+        id: extract
+        run: |
+          mkdir -p .mermaid-check
+          awk '
+            /^```mermaid$/ { n++; f = 1; next }
+            /^```$/        { f = 0 }
+            f              { print > (".mermaid-check/block-" n ".mmd") }
+          ' README.md
+
+          count=$(ls .mermaid-check/*.mmd 2>/dev/null | wc -l)
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+          echo "Found $count mermaid block(s)."
+
+          # A README that silently loses its diagram is also a failure worth
+          # catching, since the surrounding prose still refers to it.
+          if [[ "$count" -eq 0 ]]; then
+            echo "::error::No mermaid block found in README.md"
+            exit 1
+          fi
+
+      - name: Validate each block
+        run: |
+          # mermaid-cli exits non-zero on a parse error, so rendering is the
+          # validation. Output goes to a temp dir and is thrown away.
+          for f in .mermaid-check/*.mmd; do
+            echo "Checking $f"
+            npx -y @mermaid-js/mermaid-cli@11 -i "$f" -o "$f.svg" >/dev/null
+          done
+          echo "All ${{ steps.extract.outputs.count }} block(s) parsed."
