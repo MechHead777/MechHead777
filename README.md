@@ -43,7 +43,7 @@ to make it work. The automation is the point.
 | Renovate dependency PRs | none open, 6 merged in the last 30 days |
 | Apps under GitOps | 2 |
 
-<sub>Updated 2026-08-01 16:20 UTC</sub>
+<sub>Updated 2026-08-01 16:49 UTC</sub>
 <!-- LIVE:END -->
 
 ## Claims, and where to check them
