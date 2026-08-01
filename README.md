@@ -2,7 +2,7 @@
 
 I build systems that make mistakes harder to make and repetitive work unnecessary.
 
-Remote · Certified Kubernetes Administrator
+Remote · Certified Kubernetes Administrator · [LinkedIn](https://www.linkedin.com/in/reesenelson/)
 
 ## What I'm about
 
@@ -65,7 +65,7 @@ Every row points at a public repo. Feel free to go read the actual manifests ins
 
 ## Certifications
 
-**Certified Kubernetes Administrator (CKA)**
+**Certified Kubernetes Administrator (CKA)** · Credential ID `LF-rf1c3fcxxm` · [verify](https://training.linuxfoundation.org/certification/verify/)
 
 CompTIA A+, Network+, and Security+: earned, now lapsed. Listing them for accuracy, not claiming them as current.
 
