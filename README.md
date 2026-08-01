@@ -57,12 +57,11 @@ Every row points at a public repo. Feel free to go read the actual manifests ins
 | Observability | [ubernutty-cluster](https://github.com/MechHead777/ubernutty-cluster) | kube-prometheus-stack, dashboards I actually look at |
 | Dependency hygiene | [ubernutty-cluster](https://github.com/MechHead777/ubernutty-cluster) | Self-hosted Renovate CronJob raising PRs on drift |
 | Container fundamentals | [container-practice](https://github.com/MechHead777/container-practice) | Multi-stage builds, non-root UIDs end to end, compose dependency ordering that waits on real completion |
-| Bare-metal provisioning | [arch-bootstrap](https://github.com/MechHead777/arch-bootstrap) | Two-stage Arch installer: LUKS2, btrfs, systemd-boot, then a chezmoi layer that also covers WSL |
+| Bare-metal provisioning | [arch-bootstrap](https://github.com/MechHead777/arch-bootstrap) | Two-stage Arch installer: LUKS2, btrfs, systemd-boot, then a chezmoi layer covering shell, Neovim, and mise-pinned runtimes on bare metal and WSL alike |
 | Declarative systems | [nixos-backup](https://github.com/MechHead777/nixos-backup) | Whole desktop reproducible from a flake with one command |
 | Kubernetes fundamentals | [k8s-for-dummy](https://github.com/MechHead777/k8s-for-dummy) | Rolling vs. recreate strategies compared side by side, namespaces, a real self-hosted app |
 | CI for embedded builds | [zmk-config](https://github.com/MechHead777/zmk-config) | GitHub Actions matrix building ZMK firmware for three keyboards on every push |
 | Firmware debugging | [my-vial-keyboards](https://github.com/MechHead777/my-vial-keyboards) | QMK/Vial keymaps, plus porting boards off memory-starved AVR chips to RP2040 |
-| Environment as code | [dotfiles](https://github.com/MechHead777/dotfiles) | chezmoi-managed shell, Neovim, and mise-pinned runtimes |
 
 ## Certifications
 
