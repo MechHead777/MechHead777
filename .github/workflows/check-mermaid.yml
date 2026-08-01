@@ -47,10 +47,17 @@ jobs:
 
       - name: Validate each block
         run: |
-          # mermaid-cli exits non-zero on a parse error, so rendering is the
-          # validation. Output goes to a temp dir and is thrown away.
+          # mermaid-cli drives headless Chromium, which cannot use its own
+          # sandbox on the runner. Safe here: the only input is this repo's
+          # own README, rendered in a throwaway container.
+          echo '{"args":["--no-sandbox","--disable-setuid-sandbox"]}' > .mermaid-check/puppeteer.json
+
+          # A parse error makes mermaid-cli exit non-zero, so rendering is
+          # the validation. The SVG output itself is discarded.
           for f in .mermaid-check/*.mmd; do
             echo "Checking $f"
-            npx -y @mermaid-js/mermaid-cli@11 -i "$f" -o "$f.svg" >/dev/null
+            npx -y @mermaid-js/mermaid-cli@11 \
+              -p .mermaid-check/puppeteer.json \
+              -i "$f" -o "$f.svg" >/dev/null
           done
           echo "All ${{ steps.extract.outputs.count }} block(s) parsed."
