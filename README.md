@@ -41,7 +41,7 @@ Rebuilt daily by a GitHub Action that reads the cluster repo, not the cluster.
 | Renovate dependency PRs | 4 open, 0 merged in the last 30 days |
 | Apps under GitOps | 2 |
 
-<sub>Updated 2026-08-28 18:37 UTC</sub>
+<sub>Updated 2026-08-29 12:38 UTC</sub>
 <!-- LIVE:END -->
 
 ## Claims, and where to check them
