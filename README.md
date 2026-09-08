@@ -1,6 +1,6 @@
 # Reese Nelson
 
-I build systems that reduce repetitive work and mistakes.
+I build systems that reduce mistakes and repetitive work.
 
 Remote · Certified Kubernetes Administrator · [LinkedIn](https://www.linkedin.com/in/reesenelson/)
 
@@ -35,8 +35,6 @@ flowchart LR
 <!-- LIVE:END -->
 
 ## Projects
-
-Every row points at a public repo. Feel free to go read the actual manifests instead of taking my word for it.
 
 | What | Where | What's in there |
 |---|---|---|
