@@ -1,6 +1,6 @@
 # Reese Nelson
 
-I build systems that reduce mistakes and repetitive work.
+I build systems that decrease mistakes and reduce repetitive work.
 
 Remote · Certified Kubernetes Administrator · [LinkedIn](https://www.linkedin.com/in/reesenelson/)
 
