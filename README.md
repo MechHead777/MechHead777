@@ -29,7 +29,7 @@ flowchart LR
 | | |
 |---|---|
 | Flux | `v2.9.5` |
-| Last infrastructure change | 2026-09-07 (today) |
+| Last infrastructure change | 2026-09-07 |
 | Renovate dependency PRs | none open, 6 merged in the last 30 days |
 | Apps under GitOps | 2 |
 
