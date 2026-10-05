@@ -1,10 +1,10 @@
 # Reese Nelson
 
-Currently building internal automation tools at work, including an email templater, a Windows media creation utility, and a chatbot for field technicians. Everything below is separate, self-directed infrastructure work on my own time.
+Currently building internal automation tools at work, including an email templater (finished), a Windows media creation utility (finished), a chatbot to assist field technicians (planning), software stack assembler (PoC), and full-stack installer (PoC). Everything below is separate, self-directed infrastructure work on my own time.
 
 Remote · Certified Kubernetes Administrator · [LinkedIn](https://www.linkedin.com/in/reesenelson/)
 
-Normally this kind of infrastructure work would come from a job, but I wanted to learn the open-source side of it properly, so I've been building my own. My homelab runs on GitOps because I got tired of forgetting what I changed, and most of what's below followed from that. I'm still filling gaps and these repos are where I'm filling them.
+Normally this kind of infrastructure work would come from a job, but I wanted to learn the open-source side of it properly, so I've been building my own. My homelab runs on GitOps because I hate drift, and most of what's below followed from that. I'm always seeking better systems, whether that be digitally or offline.
 
 ## The Homelab
 
