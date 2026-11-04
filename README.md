@@ -31,11 +31,11 @@ Rebuilt daily by a GitHub Action that reads the cluster repo, not the cluster.
 | | |
 |---|---|
 | Flux | `v2.10.0` |
-| Last infrastructure change | 2026-11-01 (1 day ago) |
-| Renovate dependency PRs | none open, 13 merged in the last 30 days |
+| Last infrastructure change | 2026-11-01 (2 days ago) |
+| Renovate dependency PRs | none open, 12 merged in the last 30 days |
 | Apps under GitOps | 2 |
 
-<sub>Updated 2026-11-03 14:03 UTC</sub>
+<sub>Updated 2026-11-04 14:24 UTC</sub>
 <!-- LIVE:END -->
 
 ## Projects
